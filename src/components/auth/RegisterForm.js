@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { User, Mail, Lock, Eye, EyeOff } from "lucide-react";
 
 const fieldClass =
-  "w-full rounded-none border-0 border-b-[3px] border-[#c99a2e] bg-transparent py-2.5 pl-7 font-semibold tracking-wide text-[#fdf9ef] caret-[#e6c157] placeholder-[#fdf9ef]/65 outline-none [text-shadow:0_1px_6px_rgba(0,0,0,0.85),_0_1px_2px_rgba(0,0,0,0.9)] transition focus:border-[#e6c157] focus:shadow-[0_4px_10px_-2px_rgba(201,154,46,0.55)]";
+  "w-full rounded-none border-0 border-b-[3px] border-[#c99a2e] bg-transparent py-2 sm:py-2.5 pl-7 font-semibold tracking-wide text-[#fdf9ef] caret-[#e6c157] placeholder-[#fdf9ef]/65 outline-none [text-shadow:0_1px_6px_rgba(0,0,0,0.85),_0_1px_2px_rgba(0,0,0,0.9)] transition focus:border-[#e6c157] focus:shadow-[0_4px_10px_-2px_rgba(201,154,46,0.55)]";
 
 const iconClass =
   "pointer-events-none absolute left-1 top-1/2 h-4 w-4 -translate-y-1/2 text-[#c99a2e]";
@@ -64,7 +64,7 @@ export default function RegisterForm({ onSwitch }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex w-full flex-col gap-4">
+    <form onSubmit={handleSubmit} className="flex w-full flex-col gap-3 sm:gap-4">
       <div className="relative">
         <User className={iconClass} />
         <input
@@ -152,7 +152,7 @@ export default function RegisterForm({ onSwitch }) {
       <button
         type="submit"
         disabled={loading}
-        className="group relative w-full overflow-hidden rounded-full py-3 text-base font-semibold text-white shadow-lg shadow-black/20 transition disabled:opacity-60"
+        className="group relative w-full overflow-hidden rounded-full py-2.5 sm:py-3 text-base font-semibold text-white shadow-lg shadow-black/20 transition disabled:opacity-60"
       >
         <span className="absolute inset-y-0 left-0 flex h-full w-[200%] transition-transform duration-700 ease-in-out group-hover:-translate-x-1/2">
           <span

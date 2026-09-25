@@ -12,7 +12,7 @@ export default function AuthCard() {
   const isRegister = mode === "register";
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-900 p-4">
+    <div className="relative flex h-dvh items-center justify-center overflow-hidden bg-slate-900 p-4">
       <VideoBackground />
       <RingsBackground />
       <div
@@ -27,10 +27,10 @@ export default function AuthCard() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -6 }}
           transition={{ duration: 0.2 }}
-          className="relative z-10 flex w-full max-w-sm flex-col items-center gap-5 px-4 py-10"
+          className="relative z-10 flex w-full max-w-sm max-h-full flex-col items-center gap-4 overflow-y-auto px-4 py-6 sm:gap-5 sm:py-10"
         >
           <h1
-            className="text-4xl font-bold tracking-tight text-[#1f4a34]"
+            className="text-3xl font-bold tracking-tight text-[#1f4a34] sm:text-4xl"
             style={{ textShadow: "0 1px 10px rgba(255,255,255,0.9), 0 1px 3px rgba(255,255,255,0.9)" }}
           >
             {isRegister ? "Register" : "Login"}
