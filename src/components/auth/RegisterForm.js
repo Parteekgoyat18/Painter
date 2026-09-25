@@ -80,6 +80,7 @@ export default function RegisterForm({ onSwitch }) {
         <input
           type="email"
           required
+          autoComplete="off"
           placeholder="Email"
           value={values.email}
           onChange={update("email")}
