@@ -22,6 +22,8 @@ export default function RegisterForm({ onSwitch }) {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [nameLocked, setNameLocked] = useState(true);
+  const [emailLocked, setEmailLocked] = useState(true);
 
   const update = (field) => (e) =>
     setValues((v) => ({ ...v, [field]: e.target.value }));
@@ -68,6 +70,9 @@ export default function RegisterForm({ onSwitch }) {
         <input
           type="text"
           required
+          autoComplete="off"
+          readOnly={nameLocked}
+          onFocus={() => setNameLocked(false)}
           placeholder="Name"
           value={values.name}
           onChange={update("name")}
@@ -80,8 +85,9 @@ export default function RegisterForm({ onSwitch }) {
         <input
           type="email"
           required
-          autoComplete="chrome-off-email"
-          name="register-email"
+          autoComplete="off"
+          readOnly={emailLocked}
+          onFocus={() => setEmailLocked(false)}
           placeholder="Email"
           value={values.email}
           onChange={update("email")}

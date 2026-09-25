@@ -16,6 +16,7 @@ export default function LoginForm({ onSwitch }) {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [emailLocked, setEmailLocked] = useState(true);
 
   const update = (field) => (e) =>
     setValues((v) => ({ ...v, [field]: e.target.value }));
@@ -53,8 +54,9 @@ export default function LoginForm({ onSwitch }) {
         <input
           type="email"
           required
-          autoComplete="chrome-off-email"
-          name="login-email"
+          autoComplete="off"
+          readOnly={emailLocked}
+          onFocus={() => setEmailLocked(false)}
           placeholder="Email"
           value={values.email}
           onChange={update("email")}
