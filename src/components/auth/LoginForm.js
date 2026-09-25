@@ -53,7 +53,8 @@ export default function LoginForm({ onSwitch }) {
         <input
           type="email"
           required
-          autoComplete="off"
+          autoComplete="chrome-off-email"
+          name="login-email"
           placeholder="Email"
           value={values.email}
           onChange={update("email")}
